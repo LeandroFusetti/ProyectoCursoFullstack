@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ClienteControll;
+use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +20,5 @@ Route::get('/', function () {
 });
 
 
+Route::get('/home', [ClienteControll::class,'index']);
+Route::get('/productos', [ProductoController::class,'index']);
