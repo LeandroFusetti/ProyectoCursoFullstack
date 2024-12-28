@@ -20,7 +20,11 @@
                      
                     
                
-                 <div>{{$producto->nombre}}<br><span>${{$producto->precio}}</span></div>
+                 <div>{{$producto->nombre}}<br>
+                    <span>${{$producto->precio}}</span><br>
+                    <!--<span>{{$producto->categoria->nombre_categoria}}</span>-->
+                
+                </div>
                  <div><button type="button" id="1"  class=" comprar btn btn-primary btn-lg">Comprar</button></div>
             </div>
             @endforeach

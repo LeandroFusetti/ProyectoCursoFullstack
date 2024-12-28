@@ -18,7 +18,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 </head>
 <body>
 <!--Inicio de Header-->
@@ -26,8 +26,8 @@
                       
         <div class="header__div">
             <div class="header___div__logos">
-                <img src="./img/logo/mr-limpia-2.png" alt="mr-limpia-2" width="100px" height="100px" >
-                <img src="./img/logo/Mr Limpia.png" alt="" width="220px"  height="70px">
+                <img src="{{ asset('./img/logo/mr-limpia-2.png') }}" alt="mr-limpia-2" width="100px" height="100px" >
+                <img src="{{ asset('./img/logo/Mr Limpia.png') }}" alt="" width="220px"  height="70px">
             </div>
             <nav class="navbar navbar-light header__div__buscador">
                 <div class="container-fluid">
@@ -41,11 +41,11 @@
         
         <nav class="nav">
             <ul class="nav__list"> 
-                <li class="nav__list__link"><a href="index.html">Inicio</a></li>
-                <li class="nav__list__link"><a href="./pages/Artículos.html">Artículos</a></li>    
-                <li class="nav__list__link"><a href="./pages/Promociones.html">Promociones</a></li>
-                <li class="nav__list__link"><a href="./pages/Nosotros.html">Nosotros</a></li>
-                <li class="nav__list__link"><a href="./pages/Contactos.html">Contacto</a></li>  
+                <li class="nav__list__link"><a href="./home">Inicio</a></li>
+                <li class="nav__list__link"><a href="./productos">Artículos</a></li>    
+                <li class="nav__list__link"><a href="./promociones">Promociones</a></li>
+                <li class="nav__list__link"><a href="./nosotros">Nosotros</a></li>
+                <li class="nav__list__link"><a href="./registro">Registro</a></li>  
             </ul>
         </nav>
         <nav class="navbar navbar-expand-lg navbar-light ">

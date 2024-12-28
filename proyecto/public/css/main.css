@@ -6,6 +6,7 @@
 
 body{
     font-family: 'Poppins', sans-serif;
+    
 }
 
 /*Header */
@@ -42,12 +43,7 @@ body{
     background-color: #3243a3;
     text-align: center;
     font-size: 1.5rem;
-    a{
-        color: white !important ;
-    }
-    boton{
-        border: white ;
-    }
+    
     /*
     @include movil{
         display: flex;
@@ -56,9 +52,13 @@ body{
     }*/
 }
 
+.navbar-expand-lg a{
+    color: white !important ;
+}
 
-
-
+.navbar-expand-lg boton{
+    border: white ;
+}
 
 /* menu navegacion */
 .nav{
@@ -109,6 +109,36 @@ body{
 }
 
 /* Fin header*/
+
+/* pre footer */
+.prefooter{
+    background-color: rgb(189, 218, 253);
+    text-align: center;
+    border-top: solid 2px rgb(207, 205, 205); 
+}
+
+.prefooter__h3{
+    color:  #3243a3;
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 60px;
+}
+
+.prefooter__icons{
+    display: flex;
+    justify-content: space-evenly;
+       
+}
+
+.prefooter__icons p{
+    font-weight: 700;
+    font-size: 2rem;
+    color:  #3243a3;
+    padding-bottom: 30px ;
+}
+
+
+
 
 /*Footer */
 
@@ -177,7 +207,7 @@ footer{
      text-transform: uppercase;
      font-size: 1.5rem;
      font-weight: 900;
-     border: $borde;
+     border: solid 5px rgb(207, 205, 205);
      
  }
 
@@ -210,7 +240,7 @@ footer{
 } 
 
 .col-lg-4 div span{
-    color: $celeste;
+    color: rgb(60, 154, 216);
     width: 500;
     font-size: 1.5rem;
     font-weight: 600;
@@ -224,3 +254,52 @@ footer{
     background-color: aquamarine;
     margin: 400px;
 }
+
+
+/* nosotros*/
+
+.main-promociones{
+    
+    width: 100%;
+}
+.article{
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    
+    width: 100%;
+    
+   
+   
+} 
+
+.article__section{
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(199, 219, 243);
+    padding: 10px;
+    margin: 0px;
+
+}
+
+.article__section__div--texto{
+    width: 100%;
+}
+
+p {
+     font-size: 1.25rem;
+     word-spacing: 1px;
+     font-weight: 900;;
+    
+ }
+
+ .letrasPromocion{
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #2038B9;
+   
+ }

@@ -84,25 +84,7 @@
 
         </div>
 
-        <div class="prefooter">
-            <h3 class="prefooter__h3"> Ofrecemos productos para todas las necesidades</h3>
-            <div class="prefooter__icons">
-                <div>
-                <img src="./img/home.png" alt="home" width="110px" height="110px">
-                <p>Residencial</p>
-                </div>
-
-                <div>
-                <img src="./img/building.png" alt="building" width="110px" height="110px">
-                <p>Comercial</p>
-                </div>
-
-                <div>
-                <img src="./img/factory.png" alt="building" width="110px" height="110px">
-                <p>Industrial</p>
-                </div>
-            </div>
-        </div>
+        
        
     </main>
     @include('footer')

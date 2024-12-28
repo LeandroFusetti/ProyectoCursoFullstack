@@ -22,3 +22,16 @@ Route::get('/', function () {
 
 Route::get('/home', [ClienteControll::class,'index']);
 Route::get('/productos', [ProductoController::class,'index']);
+Route::get('/productos/{producto}/edit', [ProductoController::class,'edit']);
+
+Route::get('/productos_create', [ProductoController::class,'create']);
+Route::post('/productos', [ProductoController::class,'store']);
+
+Route::get('/registro', function(){
+    return view("registro");
+});
+
+Route::get('/nosotros', function(){
+    return view("nosotros");
+});
+

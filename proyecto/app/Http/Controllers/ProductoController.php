@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Producto;
+use App\Models\Categoria;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,9 +16,9 @@ class ProductoController extends Controller
     public function index()
     {
         //$productos= DB::select("SELECT * FROM productos");
-        $productos= DB::table("productos")->get();
+        $productos= Producto::all();
 
-        return view('productos',["productos"=>$productos]);
+        return view('productos.productos',["productos"=>$productos]);
     }
 
     /**
@@ -26,6 +28,9 @@ class ProductoController extends Controller
      */
     public function create()
     {
+        $categorias= Categoria::all();
+       
+        return view('productos.productos_create',compact('categorias'));
         //
     }
 
@@ -37,6 +42,23 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request->all());
+        $datos = $request->validate([
+            "nombre" => ["required"],
+            "precio" => ["required"],
+            "direccionImagen"=> ["required"],
+            'categoria_id' => ["required"],
+        ], [
+            "nombre.required" => "Este campo es obligatorio!",
+            "precio.required" => "Este campo es obligatorio!",
+            "direccionImagen.required" => "Este campo es obligatorio!"
+
+        ]);
+
+       
+        Producto::create($datos);
+        return response()->redirectTo("/productos");
+        
         //
     }
 
@@ -57,9 +79,9 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Producto $producto)
     {
-        //
+        return view("productos.producto_edit",["producto"=>$producto]);
     }
 
     /**
