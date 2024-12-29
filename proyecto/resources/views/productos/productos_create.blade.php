@@ -3,7 +3,7 @@
 
 <main id="local">
    
-    <form action="productos" method="post">
+    <form action="../productos" method="post">
         @csrf
         <label>Nombre:</label>
         <input value="{{old('nombre')}}" type="text" id="nombre" name="nombre" >

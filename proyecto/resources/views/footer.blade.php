@@ -4,17 +4,17 @@
         <h3 class="prefooter__h3"> Ofrecemos productos para todas las necesidades</h3>
         <div class="prefooter__icons">
             <div>
-            <img src="../img/home.png" alt="home" width="110px" height="110px">
+            <img src="./img/footer/home.png" alt="home" width="110px" height="110px">
             <p>Residencial</p>
             </div>
 
             <div>
-            <img src="../img/building.png" alt="building" width="110px" height="110px">
+            <img src="./img/footer/building.png" alt="building" width="110px" height="110px">
             <p>Comercial</p>
             </div>
 
             <div>
-            <img src="../img/factory.png" alt="building" width="110px" height="110px">
+            <img src="./img/footer/factory.png" alt="building" width="110px" height="110px">
             <p>Industrial</p>
             </div>
         </div>
@@ -44,10 +44,12 @@
             </ul>
         </div>
 
-        <div class="footer__div footer__div--redes">
+        <div class="footer__div" >
+            <div class="footer__div--redes">
             <a href="https://es-la.facebook.com/" target="_blank"><img src="./img/footer/facebook.png" alt="facebook" width="50" height="50"></a>
             <a href="https://www.instagram.com/" target="_blank"><img src="./img/footer/instagram.png" alt="instagram" width="50" height="50"></a>
             <a href="https://es-la.facebook.com/" target="_blank"><img src="./img/footer/whatsapp.png" alt="facebook" width="50" height="50"></a>
+            </div>
         </div>
     </div>
 
@@ -58,7 +60,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
 </body>
 
 </html>

@@ -42,7 +42,7 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
+        
         $datos = $request->validate([
             "nombre" => ["required"],
             "precio" => ["required"],
@@ -81,7 +81,8 @@ class ProductoController extends Controller
      */
     public function edit(Producto $producto)
     {
-        return view("productos.producto_edit",["producto"=>$producto]);
+        $categorias= Categoria::all();
+        return view("productos.producto_edit",["producto"=>$producto],compact('categorias'));
     }
 
     /**
@@ -91,9 +92,30 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Producto $producto, Request $request)
     {
-        //
+        //dd($request->all());
+        $datos = $request->validate([
+            "nombre" => ["required"],
+            "precio" => ["required"],
+            "direccionImagen"=> ["required"],
+            'categoria_id' => ["required"],
+        ], [
+            "nombre.required" => "Este campo es obligatorio!",
+            "precio.required" => "Este campo es obligatorio!",
+            "direccionImagen.required" => "Este campo es obligatorio!"
+
+        ]);
+
+        $producto->nombre= $datos["nombre"];
+        $producto->precio= $datos["precio"];
+        $producto->direccionImagen= $datos["direccionImagen"];
+        $producto->categoria_id= $datos["categoria_id"];
+
+
+        $producto->save();
+        return redirect("/productos")->with("success", "Se actualizo el producto de forma correcta");
+
     }
 
     /**

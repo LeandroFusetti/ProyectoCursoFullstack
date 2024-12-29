@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ClienteControll;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\LoginController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,18 +22,27 @@ Route::get('/', function () {
 });
 
 
-Route::get('/home', [ClienteControll::class,'index']);
-Route::get('/productos', [ProductoController::class,'index']);
-Route::get('/productos/{producto}/edit', [ProductoController::class,'edit']);
+Route::get('/home', [ClienteControll::class,'index'])->name("login");
 
-Route::get('/productos_create', [ProductoController::class,'create']);
+//Productos
+Route::get('/productos', [ProductoController::class,'index'])->middleware("auth");
+Route::get('/productos/{producto}/edit', [ProductoController::class,'edit'])->middleware("auth");
+Route::put('/productos/{producto}', [ProductoController::class, 'update']);
+Route::get('/productos/create', [ProductoController::class,'create']);
 Route::post('/productos', [ProductoController::class,'store']);
 
-Route::get('/registro', function(){
-    return view("registro");
+
+
+//Login
+Route::get('/register', [LoginController::class, 'index']);
+Route::post("/register",[LoginController::class, 'register']);
+Route::post("/login",[LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/servicios', function(){
+    return view("servicios");
 });
 
 Route::get('/nosotros', function(){
     return view("nosotros");
 });
-

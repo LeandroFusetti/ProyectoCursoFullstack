@@ -3,7 +3,17 @@
 <!--Inicio del main-->
 
    <main class="mainIndex">
+    @if (session()->has("success"))
+    <div class="container">
+        <div class="alert alert-success text-center">{{ session("success") }}</div>
+    </div>
+  @endif
 
+  @if (session()->has("fail"))
+    <div class="container">
+        <div class="alert alert-danger text-center">{{ session("fail") }}</div>
+    </div>
+  @endif
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -37,54 +47,19 @@
         </div>
         <div class="container">
             <div class="row justify-content-center ">
-                <div class="col-lg-3 col-sm-1 col-xs-1 ">
-                     <div><img src="./img/alcohol70.jpg" alt="/alcohol70" width="200" height="200"></div>
-                     <div>Alcohol Etílico al 70% Desinfectante <br><span>$829</span></div>
-                     <div><button type="button" class="btn btn-primary btn-lg">Comprar</button></div>
-                </div>
+              @foreach($productos as $producto)
+              <div class="col-lg-4  col-xs-1" >
+                   <div><img src="{{$producto->direccionImagen}}" alt={{$producto->nombre}} width="160px" height="160px"></div>
+                  
+                   <div>{{$producto->nombre}}<br>
+                      <span>${{$producto->precio}}</span><br>
+                  </div>
+                   <div><button type="button" id="1"  class=" comprar btn btn-primary btn-lg">Comprar</button></div>
+              </div>
+              @endforeach
             
-                <div class="col-lg-3 col-sm-1 col-xs-1">
-                    <div><img src="./img/baldeTrapeadorEscurridor.jpg" alt="baldeTrapeadorEscurridor" width="200" height="200"></div>
-                    <div>Mopa Trapeador Centrífugo<br><span>$1659</span></div>  
-                    <div><button type="button" class="btn btn-primary btn-lg">Comprar</button></div>
-                    
-                </div> 
-
-                <div class="col-lg-3 col-sm-1 col-xs-1">
-                    <div><img src="./img/comboLimpieza.jpg" alt="comboLimpieza" width="200" height="200"></div>
-                    <div>Combo Procenex Lysoform Procenex  <br><span>$680</span></div>     
-                    <div><button type="button" class="btn btn-primary btn-lg">Comprar</button></div>
-                </div> 
-
-            
+              </div>
             </div>
-
-            <div class="row justify-content-center ">
-                <div class="col-lg-3 col-sm-1 col-xs-1">
-                     <div><img src="./img/escobaPalaCondor.jpg" alt="escobaPalaCondor" width="200" height="200"></div>
-                     <div>Palo y Escoba Condor  <br><span>$1.776</span></div>
-                     <div><button type="button" class="btn btn-primary btn-lg">Comprar</button></div>
-                </div>
-            
-                <div class="col-lg-3 col-sm-1 col-xs-1">
-                    <div><img src="./img/kitMolaxAuto.jpg" alt="kitMolaxAutol" width="200" height="200"></div>
-                    <div>Kit Auto de Molax  <br><span>$9.673</span></div>     
-                    <div><button type="button" class="btn btn-primary btn-lg">Comprar</button></div>
-                </div> 
-
-                <div class="col-lg-3 col-sm-1 col-xs-1">
-                    <div><img src="./img/pañoMontimer.jpg" alt="pañoMontimer" width="200" height="200"></div>
-                    <div>Paños Montimer  <br><span>$145</span></div>  
-                    <div><button type="button" class="btn btn-primary btn-lg">Comprar</button></div>   
-                </div> 
-
-            </div>
-        </div>
-
-
-        </div>
-
-        
        
     </main>
     @include('footer')
