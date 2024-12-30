@@ -43,34 +43,33 @@ $(document).ready(function () {
     var carrito = [];
     var total = 0;
 
-    // Función para agregar un producto al carrito
+    
     $(".btn-agregar").on("click", function () {
         var id = $(this).data("id");
         var nombre = $(this).data("nombre");
         var precio = parseFloat($(this).data("precio"));
 
-        // Añadir al carrito
+       
         carrito.push({ id, nombre, precio });
         total += precio;
 
-        // Actualizar el DOM
+      
         actualizarCarrito();
     });
 
-    // Función para eliminar un producto del carrito
     $("#carrito").on("click", ".btn-eliminar", function () {
         var index = $(this).data("index");
-        total -= carrito[index].precio; // Restar del total
-        carrito.splice(index, 1); // Eliminar del carrito
+        total -= carrito[index].precio; 
+        carrito.splice(index, 1); 
 
-        // Actualizar el DOM
+       
         actualizarCarrito();
     });
 
-    // Función para actualizar el carrito en el DOM
+   
     function actualizarCarrito() {
         var $tbody = $("#carrito tbody");
-        $tbody.empty(); // Limpiar la tabla
+        $tbody.empty(); 
 
         carrito.forEach((producto, index) => {
             $tbody.append(`

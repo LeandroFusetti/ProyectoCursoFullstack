@@ -47,19 +47,24 @@ class ProductoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Producto $producto ,Request $request)
     {
         
         $datos = $request->validate([
-            "nombre" => ["required"],
-            "precio" => ["required"],
+            "nombre" => ["required", 
+                "min:3", // Mínimo 3 caracteres
+                "max:50", // Máximo 50 caracteres
+                "unique:productos,nombre," . $producto->id  ],
+            "precio" => ["required","numeric"],
             "direccionImagen"=> ["required"],
             'categoria_id' => ["required"],
         ], [
-            "nombre.required" => "Este campo es obligatorio!",
-            "precio.required" => "Este campo es obligatorio!",
-            "direccionImagen.required" => "Este campo es obligatorio!"
-
+            "nombre.required" => "El nombre del producto es obligatorio.",
+            "nombre.unique" => "El nombre ya está en uso.",
+            "precio.required" => "El precio del producto es obligatorio.",
+            "precio.numeric" => "El precio debe ser un valor numérico.",
+            "direccionImagen.required" => "La dirección de la imagen es obligatoria.",
+            "categoria_id.required" => "La categoría del producto es obligatoria."
         ]);
 
        
@@ -103,16 +108,21 @@ class ProductoController extends Controller
     {
         //dd($request->all());
         $datos = $request->validate([
-            "nombre" => ["required"],
-            "precio" => ["required"],
-            "direccionImagen"=> ["required"],
-            'categoria_id' => ["required"],
-        ], [
-            "nombre.required" => "Este campo es obligatorio!",
-            "precio.required" => "Este campo es obligatorio!",
-            "direccionImagen.required" => "Este campo es obligatorio!"
-
-        ]);
+            "nombre" => ["required", 
+            "min:3", 
+            "max:50",
+            "unique:productos,nombre,".$producto->id ],
+        "precio" => ["required","numeric"],
+        "direccionImagen"=> ["required"],
+        'categoria_id' => ["required"],
+    ], [
+        "nombre.required" => "El nombre del producto es obligatorio.",
+        "nombre.unique" => "El nombre ya está en uso.",
+        "precio.required" => "El precio del producto es obligatorio.",
+        "precio.numeric" => "El precio debe ser un valor numérico.",
+        "direccionImagen.required" => "La dirección de la imagen es obligatoria.",
+        "categoria_id.required" => "La categoría del producto es obligatoria."
+    ]);
 
         $producto->nombre= $datos["nombre"];
         $producto->precio= $datos["precio"];

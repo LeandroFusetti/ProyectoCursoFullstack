@@ -21,25 +21,27 @@ class LoginController extends Controller
 
         if(auth()->attempt(["username" => $datos["loginusername"], "password" => $datos["loginpassword"]])){
             //exito!
-            return response()->redirectTo("/productos");
+            return response()->redirectTo("/productos")->with("success", "Se ingreso correctamente");;
         }
         else{
             //fallo!
-            return response()->redirectTo("/home")->with("fail", "Hubo un error al acreditarse!");
+            return response()->redirectTo("/home")->with("fail", "Usuario y/o contraseña incorrecta");
         }
     }
 
     public function register(Request $request){
         $datos = $request->validate([
-                "username" => ['required', 'min:3', 'max:8'],
-                "password" => ['required', 'confirmed']
+                "username" => ['required', 'min:5', 'max:20','alpha_num','unique:usuarios,username'],
+                "password" => ['required', 'confirmed','min:5',]
             ],
             [
                 "username.required" => "Este campo es obligatorio",
-                "username.min" => "Este campo necesita un minimo de 3 caracteres",
-                "username.max" => "Este campo no puede pasar de tantos caracteres",
-                "password.required" => "Este campo es obligatorio",
-                "password.confirmed" => "Las contraseñas no coinciden"
+                "username.unique" => "El nombre de usuario ya está en uso.",
+                "username.min" =>"El nombre de usuario debe tener al menos 5 caracteres.",
+                "username.max" => "El nombre de usuario no puede superar los 20 caracteres.",
+                "password.required" => "La contraseña es obligatoria.",
+                "password.confirmed" => "Las contraseñas no coinciden.",
+                "password.min" => "La contraseña debe tener al menos 5 caracteres."
             ]
         );
 
