@@ -54,7 +54,7 @@
                    <div>{{$producto->nombre}}<br>
                       <span>${{$producto->precio}}</span><br>
                   </div>
-                   <div><button type="button" id="1"  class=" comprar btn btn-primary btn-lg">Comprar</button></div>
+                  <p class="envioGratis">Envio <strong> gratis</strong> en la primera compra</p>
               </div>
               @endforeach
             

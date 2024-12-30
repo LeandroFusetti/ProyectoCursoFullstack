@@ -20,6 +20,13 @@ class ProductoController extends Controller
 
         return view('productos.productos',["productos"=>$productos]);
     }
+    public function index2()
+    {
+        //$productos= DB::select("SELECT * FROM productos");
+        $productos= Producto::all();
+        $categorias= Categoria::all();
+        return view('productos.productos_lista_editar',["productos"=>$productos],["categorias"=>$categorias]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -57,7 +64,7 @@ class ProductoController extends Controller
 
        
         Producto::create($datos);
-        return response()->redirectTo("/productos");
+        return response()->redirectTo("/productos_listado");
         
         //
     }
@@ -114,7 +121,7 @@ class ProductoController extends Controller
 
 
         $producto->save();
-        return redirect("/productos")->with("success", "Se actualizo el producto de forma correcta");
+        return redirect("/productos_listado")->with("success", "Se actualizo el producto de forma correcta");
 
     }
 
@@ -124,8 +131,15 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Producto $producto)
     {
-        //
+        $respuesta = $producto->delete();
+
+        if($respuesta){
+            return redirect("/productos_listado")->with("success", "Se elimino el producto correctamente");
+        }
+        else{
+            return redirect("/productos_listado")->with("fail", "No se pudo eliminar");
+        }
     }
 }

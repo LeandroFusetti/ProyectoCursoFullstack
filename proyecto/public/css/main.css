@@ -35,8 +35,8 @@ body{
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    /* Hacer que el contenedor ocupe toda la altura de la pantalla */
-    background-color: #f8f9fa; /* Puedes usar el color que desees */
+    
+    background-color: #f8f9fa;
     text-align: center;
     padding: 0.5rem;
         
@@ -355,6 +355,13 @@ footer{
 }
 
 
+.envioGratis{
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.5rem;
+    letter-spacing: 2px;
+}
+
 .destacados{
     background-color: #2038B9;
     text-align: center;
@@ -362,4 +369,30 @@ footer{
     border-top: solid 5px rgb(207, 205, 205);
     color: white;
 
+}
+
+.actions-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.actions-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.actions-container form {
+    display: inline;
+}
+
+.actions-container button {
+    border: none;
+    background: none;
+    color: red;
+    cursor: pointer;
+}
+
+.actions-container i {
+    font-size: 16px;
 }

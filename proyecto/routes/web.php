@@ -3,7 +3,7 @@
 use App\Http\Controllers\ClienteControll;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\LoginController;
-
+use App\Models\Producto;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +30,9 @@ Route::get('/productos/{producto}/edit', [ProductoController::class,'edit'])->mi
 Route::put('/productos/{producto}', [ProductoController::class, 'update']);
 Route::get('/productos/create', [ProductoController::class,'create']);
 Route::post('/productos', [ProductoController::class,'store']);
+Route::delete('/productos/{producto}', [ProductoController::class, 'destroy']);
+Route::get('/productos_listado', [ProductoController::class,'index2'])->middleware("auth");
+
 
 
 

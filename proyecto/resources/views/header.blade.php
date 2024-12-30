@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Elegi nuestros articulos.">
-    <meta name="keywords"  content="articulos de limpieza, limpio, alcohol, lavandina, compra por mayor, limpiapisos, servicios">
     <title> Articulos -Mr Limpia-</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap" rel="stylesheet">
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,10 +19,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    <script
-  src="https://code.jquery.com/jquery-3.7.1.min.js"
-  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-  crossorigin="anonymous"></script>
+    <meta name="CSRF-token" content="{{ csrf_token() }}">
 </head>
 <body>
 <!--Inicio de Header-->
@@ -65,7 +62,9 @@
         <nav class="nav">
             <ul class="nav__list"> 
                 <li class="nav__list__link"><a href="./home">Inicio</a></li>
-                <li class="nav__list__link"><a href="./productos">Productos</a></li>    
+                <li class="nav__list__link"><a href="./productos">Productos</a></li> 
+                <li class="nav__list__link"><a href="./productos_listado">Listado</a></li>    
+
                 <li class="nav__list__link"><a href="./servicios">Servicios</a></li>
                 <li class="nav__list__link"><a href="./nosotros">Nosotros</a></li>
                 <li class="nav__list__link"><a href="./register">Registro</a></li>  
