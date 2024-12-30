@@ -19,7 +19,7 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
         <label>Direccion Imagen</label>
-        <input value="{{old('direccionImagen')}}" type="text" id="direccionImagen" name="direccionImagen" ><br>
+        <input value="{{old('direccionImagen')}}" type="file" id="direccionImagen" name="direccionImagen" ><br>
         <br>
 
         

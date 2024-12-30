@@ -82,7 +82,7 @@ $(document).ready(function () {
             `);
         });
 
-        // Actualizar el total
+        
         $("#total").text(`$${total.toFixed(2)}`);
     }
 });

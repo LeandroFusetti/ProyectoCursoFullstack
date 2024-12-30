@@ -37,7 +37,7 @@
             <label for="direccionImagen" style="display: block; font-weight: bold; margin-bottom: 5px;">
                 Dirección Imagen:
             </label>
-            <input value="{{old('direccionImagen', $producto->direccionImagen)}}" type="text" id="direccionImagen" name="direccionImagen" 
+            <input value="{{old('direccionImagen', $producto->direccionImagen)}}" type="file" id="direccionImagen" name="direccionImagen" 
                    style="width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 5px;">
             @error('direccionImagen')
                 <div class="alert alert-danger" style="color: red; font-size: 0.875rem; margin-top: 5px;">

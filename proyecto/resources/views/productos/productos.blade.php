@@ -20,7 +20,7 @@
         <div class="row justify-content-center" id="mercaderia">
             @foreach($productos as $producto)
             <div class="col-lg-4  col-xs-1" >
-                 <div><img src="{{$producto->direccionImagen}}" alt={{$producto->nombre}} width="160px" height="160px"></div>
+                 <div><img src="./img/productos/{{$producto->direccionImagen}}" alt={{$producto->nombre}} width="160px" height="160px"></div>
                 
                  <div>{{$producto->nombre}}<br>
                     <span>${{$producto->precio}}</span><br>
