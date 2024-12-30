@@ -47,8 +47,8 @@
         <div class="footer__div" >
             <div class="footer__div--redes">
             <a href="https://es-la.facebook.com/" target="_blank"><img src="{{ asset('./img/footer/facebook.png')}}" alt="facebook" width="50" height="50"></a>
-            <a href="https://www.instagram.com/" target="_blank"><img src="{{ asset('./img/footer/instagram.png')}}" alt="instagram" width="50" height="50"></a>
-            <a href="https://es-la.facebook.com/" target="_blank"><img src="{{ asset('./img/footer/whatsapp.png')}}" alt="facebook" width="50" height="50"></a>
+            <a href="https://instagram.com/" target="_blank"><img src="{{ asset('./img/footer/instagram.png')}}" alt="instagram" width="50" height="50"></a>
+            <a href="https://web.whatsapp.com/" target="_blank"><img src="{{ asset('./img/footer/whatsapp.png')}}" alt="facebook" width="50" height="50"></a>
             </div>
         </div>
     </div>
